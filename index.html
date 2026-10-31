@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>U02KN25S0002  </title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fffaf0;
+            color: #333;
+        }
+
+        /* HEADER */
+        header {
+            height: 80px;
+            background: #4b1c08;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-symbol {
+            font-size: 35px;
+        }
+
+        .logo h2 {
+            margin: 0;
+            color: #ffd27f;
+            font-family: Georgia, serif;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffd27f;
+        }
+
+        /* HOME */
+        .home {
+            min-height: 570px;
+
+            background:
+                linear-gradient(
+                    rgba(50, 20, 5, 0.45),
+                    rgba(50, 20, 5, 0.55)
+                ),
+                url("bbb.jpeg");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            color:#F5EBDD ;
+        }
+
+        .home-content {
+            max-width: 850px;
+            padding: 30px;
+        }
+
+        .welcome {
+            color: #ffd27f;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 4px;
+        }
+
+        .home h1 {
+            font-family: Georgia, serif;
+            font-size: 55px;
+            margin: 15px 0;
+            color: #ffd27f;
+            text-shadow: 2px 2px 5px #222;
+        }
+
+        .home h2 {
+            font-family: Georgia, serif;
+            font-size: 28px;
+            margin: 10px 0 20px;
+        }
+
+        .home p {
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+
+        /* BUTTON */
+        .explore-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 13px 30px;
+            background: #8b4513;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .explore-btn:hover {
+            background: #ffd27f;
+            color: #4b1c08;
+            transform: scale(1.05);
+        }
+
+        /* RESPONSIVE */
+        @media(max-width: 600px) {
+
+            header {
+                padding: 0 15px;
+            }
+
+            .logo h2 {
+                font-size: 17px;
+            }
+
+            nav a {
+                margin-left: 8px;
+                font-size: 12px;
+            }
+
+            .home h1 {
+                font-size: 36px;
+            }
+
+            .home h2 {
+                font-size: 21px;
+            }
+
+            .home p {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+            <div class="logo-symbol">🛕</div>
+
+            <h2>Temples of Karnataka</h2>
+        </div>
+
+        <nav>
+            <a href="temple.html">Home</a>
+            <a href="pr15.html#temples">Temples</a>
+            <a href="pr15.html#about">About</a>
+                </nav>
+
+    </header>
+
+
+    <!-- HOME PAGE -->
+
+    <section class="home">
+
+
+        <div class="home-content">
+
+            <div class="welcome">
+                WELCOME TO
+            </div>
+
+            <h1>🛕Temples of Karnataka</h1>
+
+            <h2>
+                Discover the Sacred Heritage of Karnataka
+            </h2>
+
+            <p>
+                Explore the ancient temples, magnificent architecture,
+                rich traditions and spiritual beauty of Karnataka.
+            </p>
+
+            <a href="pr15.html#temples" class="explore-btn">
+                Explore Temples →
+            </a>
+
+        </div>
+
+    </section>
+
+</body>
+</html>
