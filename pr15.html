@@ -1,0 +1,943 @@
+ 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>U02KN25S0035</title>
+
+    <!-- =================  INTERNAL CSS ================= -->
+    <style>
+
+       * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fffaf0;
+            color: #333;
+        }
+
+        /* HEADER */
+
+        header{   
+             height: 270px;
+            background: linear-gradient(
+                rgba(80,35,10,0.25),
+                rgba(80,35,10,0.25)
+            ),
+            url("images/header.jpeg");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            color: white;
+        }
+
+        header h1 {
+            font-family: Georgia, serif;
+            font-size: 48px;
+            margin: 5px;
+            text-shadow: 2px 2px 5px #333;
+        }
+
+        header p {
+            font-size: 19px;
+            text-shadow: 1px 1px 3px #333;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            background: #5b260b;
+            padding: 16px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 25px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #ffd27f;
+        }
+
+
+
+/* SEARCH BAR */
+
+.search-box {
+    text-align: center;
+    margin: 30px auto;
+}
+
+.search-box input {
+    width: 320px;
+    padding: 13px 18px;
+    border: 2px solid #5b260b;
+    border-radius: 25px;
+    font-size: 15px;
+    outline: none;
+}
+
+.search-box button {
+    padding: 13px 25px;
+    margin-left: 8px;
+    border: none;
+    border-radius: 25px;
+    background: #5b260b;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-box button:hover {
+    background: #d4af37;
+    color: #4b1c08;
+    transform: scale(1.05);
+}
+
+
+
+
+
+
+
+
+        /* ABOUT */
+
+        .about {
+            width: 94%;
+            margin: 28px auto;
+            padding: 28px;
+            background: #fff1d6;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .about h2 {
+            color: #7b350e;
+            font-family: Georgia, serif;
+            font-size: 30px;
+        }
+
+        .about p {
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        /* SECTION TITLE */
+
+        .title {
+            text-align: center;
+            color: #7b350e;
+            font-family: Georgia, serif;
+            font-size: 32px;
+            margin: 35px;
+        }
+
+        /* TEMPLE GRID */
+
+        .temple-container {
+            width: 94%;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        /* TEMPLE CARD */
+
+        .temple {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px #ccc;
+            text-align: center;
+
+            transition: 0.3s;
+        }
+
+        .temple:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 7px 18px #aaa;
+        }
+
+        .temple img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+          object-position:center;
+        }
+
+        .temple h2 {
+            color: #81370e;
+            font-family: Georgia, serif;
+            font-size: 21px;
+            margin: 14px 8px 8px;
+        }
+
+        .location {
+            color: #a34d12;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .temple > p {
+            padding: 0 15px;
+            line-height: 1.5;
+            font-size: 14px;
+            min-height: 65px;
+        }
+
+        /* VIEW DETAILS BUTTON */
+
+        details {
+            margin: 15px;
+        }
+
+        summary {
+            display: inline-block;
+            background: #8b4513;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            list-style: none;
+        }
+
+        summary:hover {
+            background: #c56b22;
+        }
+
+          /* DETAILS CONTENT */
+
+        .details {
+            margin-top: 15px;
+            padding: 15px;
+            background: #fff2dc;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+
+   
+        .details p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 8px 0;
+        }
+
+        .details b {
+            color: #7b350e;
+        }
+
+      
+        /* FOOTER */
+/* ================= PROFESSIONAL FOOTER ================= */
+
+footer {
+    width: 100%;
+    margin-top: 60px;
+    background: #4b1c08;
+    color: white;
+    text-align: center;
+    padding: 35px 20px 25px;
+    border-top: 4px solid #d4af37;
+}
+
+footer h2 {
+    color: #ffd27f;
+    font-family: Georgia, serif;
+    font-size: 25px;
+    margin: 0 0 12px;
+}
+
+footer p {
+    margin: 8px 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #f5e6d3;
+}
+
+footer p:first-of-type {
+    color: #ffd27f;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+footer p:last-child {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    font-size: 13px;
+    color: #d8c5b5;
+}
+
+
+
+
+
+
+        /* RESPONSIVE */
+
+        @media(max-width: 1100px) {
+            .temple-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .gallery {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media(max-width: 800px) {
+            .temple-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            header h1 {
+                font-size: 35px;
+            }
+        }
+
+        @media(max-width: 550px) {
+            .temple-container {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                margin: 5px;
+                font-size: 13px;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+    <h1>🛕 Temples of Karnataka</h1>
+
+    <p>
+        Explore the Divine Heritage of Karnataka
+    </p>
+
+</header>
+
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+
+    <a href="index.html">Home</a>
+
+    <a href="#temples">Temples</a>
+
+    <a href="about.html">About</a>
+
+    
+</nav>
+
+
+
+<!-- SEARCH BAR -->
+<div class="search-box">
+    <input type="text" id="searchInput"
+           placeholder="🔍 Search temple..."
+           onkeyup="searchTemple()">
+</div>
+
+
+<!-- ================= TEMPLE TITLE ================= -->
+
+<h2 id="temples" class="title">
+    🪷 Famous Temples in Karnataka
+</h2>
+
+
+<!-- ================= TEMPLE CONTAINER ================= -->
+
+<div class="temple-container">
+
+
+<!-- 1 VIRUPAKSHA -->
+
+<div class="temple">
+
+<img src="virupaksha.jpeg"
+     alt="Virupaksha Temple">
+
+<h2>Virupaksha Temple</h2>
+
+<div class="location">📍 Hampi, Karnataka</div>
+
+<p>
+One of the most famous historic temples of Hampi.
+</p>
+
+<div class="details">
+
+<a href="vvv.html" class="view-btn">
+<center><summary>View Details</summary></center>
+</a>
+
+</div>
+
+
+</div>
+
+
+<!-- 2 MURUDESHWARA -->
+
+<div class="temple">
+
+<img src="murdeshwar.jpeg"
+     alt="Murudeshwara Temple">
+
+<h2>Murudeshwara Temple</h2>
+
+<div class="location">📍 Murudeshwara</div>
+
+<p>
+Famous for its huge Shiva statue and seaside view.
+</p>
+
+<div class="details">
+<a href="murdeshwar.html" class="view-btn">
+<center><summary>View Details</summary></center>
+</a>
+</div>
+</div>
+
+
+<!-- 3 DHARMASTHALA -->
+
+<div class="temple">
+
+<img src="dharmastala.jpeg"
+     alt="Dharmasthala Temple">
+
+<h2>Dharmasthala Temple</h2>
+
+<div class="location">📍 Dharmasthala</div>
+
+<p>
+A famous pilgrimage centre dedicated to Lord Manjunatha.
+</p>
+
+<div class="details">
+<a href="dharmasthala.html" class="view-btn">
+<center><summary>View Details</summary></center>
+
+</a>
+
+
+</div>
+
+</div>
+
+
+<!-- 4 KUKKE -->
+
+<div class="temple">
+
+<img src="ku.jpeg"
+     alt="Kukke Subrahmanya Temple">
+
+<h2>Kukke Subrahmanya</h2>
+
+<div class="location">📍 Subrahmanya</div>
+
+<p>
+A famous pilgrimage centre dedicated to Lord Subrahmanya.
+</p>
+<div class="details">
+<a href="kukke.html" class="view-btn">
+<center><summary>View Details</summary></center>
+</a>
+
+
+</div>
+
+</div>
+
+
+<!-- 5 SRINGERI -->
+
+<div class="temple">
+
+<img src="sringeri.jpeg"
+     alt="Sringeri Temple">
+
+<h2>Sringeri Sharada Peetham</h2>
+
+<div class="location">📍 Sringeri</div>
+
+<p>
+A famous spiritual centre known for Sharadamba Temple.
+</p>
+
+
+<div class="details">
+<a href="sringeri.html" class="view-btn">
+<center><summary>View Details</summary></center>
+</a>
+
+
+</div>
+</div>
+
+
+<!-- 6 SIRSI MARIKAMBA -->
+
+<div class="temple">
+
+<img src="marikamba.jpeg"
+     alt="Sirsi Marikamba Temple">
+
+<h2>Sirsi Marikamba</h2>
+
+<div class="location">📍 Sirsi</div>
+
+<p>
+A popular temple dedicated to Goddess Marikamba.
+</p>
+
+
+<div class="details">
+<a href="marikamba.html" class="view-btn">
+
+<center><summary>View Details</summary></center>
+</a>
+
+
+</div>
+
+</div>
+
+
+<!-- 7 SIGANDUR -->
+
+<div class="temple">
+
+<img src="sigandur.jpeg"
+     alt="Sigandur Temple">
+
+<h2>Sigandur Chowdeshwari</h2>
+
+<div class="location">📍 Sigandur</div>
+
+<p>
+A famous temple surrounded by beautiful nature.
+</p>
+<div class="details">
+<a href="sigandur.html" class="view-btn">
+
+<center><summary>View Details</summary></center>
+</a>
+
+</div>
+
+
+</div>
+
+
+<!-- 10 UDUPI -->
+
+<div class="temple">
+
+<img src="udupi.jpeg"
+     alt="Udupi Krishna Temple">
+
+<h2>Udupi Sri Krishna</h2>
+
+<div class="location">📍 Udupi</div>
+
+<p>
+One of the most famous Krishna temples in Karnataka.
+</p>
+
+<div class="details">
+<a href="udupi.html" class="view-btn">
+
+<center><summary>View Details</summary></center>
+</a>
+
+</div>
+
+</div>
+
+
+<!-- 11 BANASHANKARI -->
+
+<div class="temple">
+
+<img src="banashankari.jpeg"
+     alt="Banashankari Temple">
+
+<h2>Banashankari Temple</h2>
+
+<div class="location">📍 Badami</div>
+
+<p>
+An ancient temple dedicated to Goddess Banashankari.
+</p>
+
+<div class="details">
+<a href="banashankari.html" class="view-btn">
+
+<center><summary>View Details</summary></center>
+</a>
+
+</div>
+
+</div>
+
+<!-- 13 KOLLUR -->
+
+<div class="temple">
+
+<img src="mookambika.jpeg"
+     alt="Kollur Mookambika Temple">
+
+<h2>Kollur Mookambika</h2>
+
+<div class="location">📍 Kollur</div>
+
+<p>
+A famous temple dedicated to Goddess Mookambika.
+</p>
+<div class="details">
+<a href="kollur.html" class="view-btn">
+
+<center><summary>View Details</summary></center>
+</a>
+
+</div>
+
+</div>
+
+
+<!-- 14 KATEEL -->
+
+<div class="temple">
+
+<img src="kateel.jpeg"
+     alt="Kateel Temple">
+
+<h2>Kateel Durga Parameshwari</h2>
+
+<div class="location">📍 Kateel</div>
+
+<p>
+A famous temple dedicated to Goddess Durga.
+</p>
+
+<div class="details">
+<a href="kateel.html" class="view-btn">
+
+<center><summary>View Details</summary></center>
+</a>
+
+</div>
+</div>
+
+
+<!-- 15 GOKARNA -->
+
+<div class="temple">
+
+<img src="gokarnam.jpeg"
+     alt="Gokarna Temple">
+
+<h2>Mahabaleshwar Temple</h2>
+
+<div class="location">📍 Gokarna</div>
+
+<p>          
+An ancient and famous Shiva temple.
+</p>
+<div class="details">
+<a href="mahableshwar.html" class="view-btn">
+
+<center><summary>View Details</summary></center>
+</a>
+
+
+</div>
+</div>
+<!-- 17 MELUKOTE -->
+
+<div class="temple">
+
+<img src="melukote.jpeg"
+     alt="Melukote Temple">
+
+<h2>Cheluvanarayana Swamy</h2>
+
+<div class="location">📍 Melukote</div>
+
+<p>
+A historic Vaishnava temple.
+</p>
+
+<div class="details">
+<a href="melukote.html" class="view-btn">
+
+<center><summary>View Details</summary></center>
+</a>
+
+</div>
+</div>
+
+
+<!-- 18 SHRAVANABELAGOLA -->
+
+<div class="temple">
+
+<img src="shravanbelagola.jpeg"
+     alt="Shravanabelagola">
+
+<h2>Shravanabelagola</h2>
+
+<div class="location">📍 Hassan</div>
+
+<p>
+A major Jain pilgrimage centre.
+</p>
+<div class="details">
+<a href="shravanabelagola.html" class="view-btn">
+
+<center><summary>View Details</summary></center>
+</a>
+
+</div>
+
+</div>
+
+<!-- 8 CHENNAKESHAVA -->
+
+<div class="temple">
+
+<img src="chennakeshava.jpeg"
+     alt="Chennakeshava Temple">
+
+<h2>Chennakeshava Temple</h2>
+
+<div class="location">📍 Belur</div>
+
+<p>
+A magnificent example of Hoysala architecture.
+</p>
+
+
+<div class="details">
+<a href="chennakeshava.html" class="view-btn">
+
+<center><summary>View Details</summary></center>
+</a>
+</div>
+</div>
+
+<!-- 12 NANJANGUD -->
+
+<div class="temple">
+
+<img src="nanjangud.jpeg"
+     alt="Nanjangud Temple">
+
+<h2>Srikanteshwara Temple</h2>
+
+<div class="location">📍 Nanjangud</div>
+
+<p>
+A famous Shiva temple near the Kabini River.
+</p>
+
+<div class="details">
+<a href="nanjangud.html" class="view-btn">
+<center><summary>View Details</summary></center>
+</a>
+</div>
+</div>
+
+<!-- 19 AMRUTESHWARA -->
+
+<div class="temple">
+
+<img src="amruteshwara.jpeg"
+     alt="Amruteshwara Temple">
+
+<h2>Amruteshwara Temple</h2>
+
+<div class="location">📍 Amruthapura</div>
+
+<p>
+A beautiful historic Hoysala temple.
+</p>
+
+<div class="details">
+<a href="amruteshwara.html" class="view-btn">
+<center><summary>View Details</summary></center>
+</a>
+</div>
+</div>
+
+
+<!-- 9 HOYSALESHWARA -->
+
+<div class="temple">
+
+<img src="hoysaleshwara.jpeg"
+     alt="Hoysaleshwara Temple">
+
+<h2>Hoysaleshwara Temple</h2>
+
+<div class="location">📍 Halebidu</div>
+
+<p>
+A beautiful Hoysala temple with detailed carvings.
+</p>
+
+
+<div class="details">
+<a href="hoysaleshwara.html" class="view-btn">
+<center><summary>View Details</summary></center>
+</a>
+</div>
+</div>
+
+
+
+<!-- 20 AIHOLE -->
+
+<div class="temple">
+
+<img src="aiholedurga.jpeg"
+     alt="Aihole Temple">
+
+<h2>Durga Temple</h2>
+
+<div class="location">📍 Aihole</div>
+
+<p>
+A famous historical temple complex.
+</p>
+<div class="details">
+<a href="aihole.html" class="view-btn">
+
+<center><summary>View Details</summary></center>
+</a>
+
+
+</div>
+
+</div>
+
+<!-- 22 YELLAMMA -->
+
+<div class="temple">
+
+<img src="yellamma.jpeg"
+     alt="Yellamma Temple">
+
+<h2>Yellamma Temple</h2>
+
+<div class="location">📍 Saundatti</div>
+
+<p>
+A popular pilgrimage centre dedicated to Yellamma.
+</p>
+<div class="details">
+<a href="yellamma.html" class="view-btn">
+
+<center><summary>View Details</summary></center>
+</a>
+
+</div>
+
+</div>
+
+
+
+
+</div>     <!-- CLOSE TEMPLE CONTAINER -->
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h2>🛕 Temples of Karnataka</h2>
+
+    <p>
+        Discover • Explore • Experience
+    </p>
+
+    <p>
+        Temples are a beautiful symbol of India's culture and heritage.
+    </p>
+
+    <p>
+        © 2026 Temples of Karnataka | All Rights Reserved
+    </p>
+
+</footer>
+<script>
+function searchTemple() {
+
+    let input = document.getElementById("searchInput")
+        .value.toLowerCase();
+
+    let temples = document.querySelectorAll(".temple");
+
+    temples.forEach(function(temple) {
+
+        let text = temple.innerText.toLowerCase();
+
+        if (text.startsWith(input) || text.startsWith(input)) {
+            temple.style.display = "";
+        } else {
+            temple.style.display = "none";
+        }
+
+    });
+}
+</script>
+
+</body>
+</html>
